@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const IMG_LOGO = "https://cdn.poehali.dev/projects/c3556d7a-0a92-41ba-b35e-bb5913447bb6/bucket/b4ea926f-ba05-4fe4-9c09-a7dfb5dbc07f.jpeg";
 const IMG_SNEAKERS = "https://cdn.poehali.dev/projects/c3556d7a-0a92-41ba-b35e-bb5913447bb6/files/8c28422c-befd-487f-ba09-d943a60eb468.jpg";
 const IMG_JACKET = "https://cdn.poehali.dev/projects/c3556d7a-0a92-41ba-b35e-bb5913447bb6/files/122575cb-6df9-4ce9-9f1c-c18c447de57e.jpg";
 const IMG_FLATLAY = "https://cdn.poehali.dev/projects/c3556d7a-0a92-41ba-b35e-bb5913447bb6/files/da4e5428-8d80-4341-a5c5-b3c457122058.jpg";
@@ -81,8 +82,8 @@ export default function Index() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 border-b border-white/10 bg-[#0a0a0a]/90 backdrop-blur-sm">
-        <button onClick={() => scrollTo("hero")} className="font-cormorant text-2xl font-bold tracking-widest uppercase">
-          ПЕРЕКРОЙКА
+        <button onClick={() => scrollTo("hero")} className="flex items-center">
+          <img src={IMG_LOGO} alt="ПЕРЕКРОЙКА" className="h-10 w-auto" style={{filter:'invert(1)', mixBlendMode:'normal'}} />
         </button>
         <div className="hidden md:flex items-center gap-8">
           {[["services","Услуги"],["about","О студии"],["works","Работы"],["reviews","Отзывы"],["contacts","Контакты"]].map(([id, label]) => (
@@ -103,7 +104,7 @@ export default function Index() {
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-[#0a0a0a] flex flex-col items-center justify-center gap-8">
           {[["hero","Главная"],["services","Услуги"],["about","О студии"],["works","Работы"],["reviews","Отзывы"],["contacts","Контакты"],["order","Заказать"]].map(([id, label]) => (
-            <button key={id} onClick={() => scrollTo(id)} className="font-cormorant text-4xl font-light tracking-widest uppercase hover:text-white/60 transition-colors">
+            <button key={id} onClick={() => scrollTo(id)} className="font-caveat text-4xl font-semibold tracking-wide hover:text-white/60 transition-colors">
               {label}
             </button>
           ))}
@@ -118,8 +119,8 @@ export default function Index() {
         </div>
         <div className="relative z-10 max-w-5xl">
           <p className="line-num mb-6 animate-fade-up opacity-0">// студия кастомизации — Москва</p>
-          <h1 className="font-cormorant text-[clamp(4rem,12vw,11rem)] leading-[0.88] font-light tracking-tight animate-fade-up opacity-0 delay-100">
-            Твоя<br/><em className="italic">вещь.</em><br/>Твой<br/>язык.
+          <h1 className="font-caveat text-[clamp(4rem,12vw,10rem)] leading-[0.92] font-bold tracking-tight animate-fade-up opacity-0 delay-100">
+            Твоя<br/>вещь.<br/>Твой<br/>язык.
           </h1>
           <p className="mt-8 font-oswald text-white/60 text-sm tracking-widest uppercase max-w-md animate-fade-up opacity-0 delay-300">
             Мы не делаем одинаковых вещей.<br/>Мы перекраиваем под тебя — буквально.
@@ -147,8 +148,8 @@ export default function Index() {
       {/* SERVICES */}
       <section id="services" className="px-6 md:px-12 py-24 md:py-32">
         <div className="flex items-end justify-between mb-16 border-b border-white/10 pb-8">
-          <h2 className="font-cormorant text-[clamp(2.5rem,6vw,5rem)] font-light leading-tight">
-            Что мы<br/><em className="italic">умеем</em>
+          <h2 className="font-caveat text-[clamp(2.5rem,6vw,5rem)] font-bold leading-tight">
+            Что мы умеем
           </h2>
           <p className="line-num hidden md:block">/ 04 услуги</p>
         </div>
@@ -159,7 +160,7 @@ export default function Index() {
                 <span className="line-num">{s.num}</span>
                 <Icon name="ArrowUpRight" size={16} className="text-white/20 group-hover:text-white transition-colors" />
               </div>
-              <h3 className="font-cormorant text-3xl md:text-4xl font-light mb-4">{s.title}</h3>
+              <h3 className="font-caveat text-3xl md:text-4xl font-bold mb-4">{s.title}</h3>
               <p className="font-oswald text-sm text-white/50 leading-relaxed tracking-wide">{s.desc}</p>
             </div>
           ))}
@@ -171,8 +172,8 @@ export default function Index() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <p className="font-mono text-xs text-black/40 mb-6 tracking-widest">// о студии</p>
-            <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4.5rem)] font-light leading-tight mb-8">
-              Мы не мастерская.<br/>Мы — <em className="italic">соавторы.</em>
+            <h2 className="font-caveat text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-tight mb-8">
+              Мы не мастерская.<br/>Мы — соавторы.
             </h2>
             <p className="font-oswald text-sm text-black/60 leading-relaxed tracking-wide mb-6">
               Перекройка — студия, где каждый заказ начинается с разговора. Мы не рисуем по шаблону и не ставим поток. Три мастера, честные сроки, работа руками.
@@ -183,7 +184,7 @@ export default function Index() {
             <div className="grid grid-cols-3 gap-6 border-t border-black/10 pt-8">
               {[["800+","работ"],["5 лет","опыта"],["3","мастера"]].map(([val, label]) => (
                 <div key={label}>
-                  <div className="font-cormorant text-4xl font-light">{val}</div>
+                  <div className="font-caveat text-4xl font-bold">{val}</div>
                   <div className="font-mono text-xs text-black/40 tracking-widest mt-1">{label}</div>
                 </div>
               ))}
@@ -201,8 +202,8 @@ export default function Index() {
       {/* WORKS */}
       <section id="works" className="px-6 md:px-12 py-24 md:py-32">
         <div className="flex items-end justify-between mb-16 border-b border-white/10 pb-8">
-          <h2 className="font-cormorant text-[clamp(2.5rem,6vw,5rem)] font-light leading-tight">
-            Примеры<br/><em className="italic">проектов</em>
+          <h2 className="font-caveat text-[clamp(2.5rem,6vw,5rem)] font-bold leading-tight">
+            Примеры проектов
           </h2>
           <p className="line-num hidden md:block">/ избранное</p>
         </div>
@@ -214,7 +215,7 @@ export default function Index() {
               </div>
               <div className="p-6 border-t border-white/10">
                 <p className="line-num mb-2">{w.tag}</p>
-                <h3 className="font-cormorant text-2xl font-light mb-1">{w.title}</h3>
+                <h3 className="font-caveat text-2xl font-bold mb-1">{w.title}</h3>
                 <p className="font-mono text-xs text-white/30">{w.client}</p>
               </div>
             </div>
@@ -225,15 +226,15 @@ export default function Index() {
       {/* REVIEWS */}
       <section id="reviews" className="px-6 md:px-12 py-24 md:py-32 bg-[#111]">
         <div className="flex items-end justify-between mb-16 border-b border-white/10 pb-8">
-          <h2 className="font-cormorant text-[clamp(2.5rem,6vw,5rem)] font-light leading-tight">
-            Говорят<br/><em className="italic">клиенты</em>
+          <h2 className="font-caveat text-[clamp(2.5rem,6vw,5rem)] font-bold leading-tight">
+            Говорят клиенты
           </h2>
           <p className="line-num hidden md:block">/ {reviews.length} отзыва</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
           {reviews.map((r) => (
             <div key={r.name} className="hoverable bg-[#111] p-8 md:p-10 card-hover cursor-none">
-              <p className="font-cormorant text-xl md:text-2xl font-light italic leading-relaxed mb-8 text-white/90">
+              <p className="font-caveat text-xl md:text-2xl font-semibold leading-relaxed mb-8 text-white/90">
                 «{r.text}»
               </p>
               <div className="flex items-center justify-between border-t border-white/10 pt-6">
@@ -256,8 +257,8 @@ export default function Index() {
         </div>
         <div className="relative z-10 max-w-2xl">
           <p className="line-num mb-6">// форма заказа</p>
-          <h2 className="font-cormorant text-[clamp(2.5rem,6vw,5rem)] font-light leading-tight mb-12">
-            Расскажи<br/>что хочешь<br/><em className="italic">перекроить</em>
+          <h2 className="font-caveat text-[clamp(2.5rem,6vw,5rem)] font-bold leading-tight mb-12">
+            Расскажи что хочешь перекроить
           </h2>
           <form className="flex flex-col gap-4" onSubmit={e => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -296,8 +297,8 @@ export default function Index() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           <div>
             <p className="font-mono text-xs text-black/40 mb-6 tracking-widest">// контакты</p>
-            <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4.5rem)] font-light leading-tight mb-12">
-              Приходи.<br/>Покажи.<br/><em className="italic">Обсудим.</em>
+            <h2 className="font-caveat text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-tight mb-12">
+              Приходи.<br/>Покажи.<br/>Обсудим.
             </h2>
             <div className="space-y-6">
               {[
@@ -336,7 +337,7 @@ export default function Index() {
 
       {/* FOOTER */}
       <footer className="px-6 md:px-12 py-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="font-cormorant text-xl tracking-widest">ПЕРЕКРОЙКА</p>
+        <img src={IMG_LOGO} alt="ПЕРЕКРОЙКА" className="h-8 w-auto" style={{filter:'invert(1)'}} />
         <p className="line-num">© 2024 — Студия кастомизации</p>
         <p className="line-num">Сделано с характером</p>
       </footer>

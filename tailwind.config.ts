@@ -92,7 +92,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			fontFamily: {
-				cormorant: ['Cormorant', 'serif'],
+				caveat: ['Caveat', 'cursive'],
 				oswald: ['Oswald', 'sans-serif'],
 				mono: ['IBM Plex Mono', 'monospace'],
 			}
